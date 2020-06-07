@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>精品课程</title>
+		<link rel="stylesheet" href="./download/iconfont.css">
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #55A532;
+			}
+			
+			#header {
+				width: 100%;
+				height: 84px;
+				background-color: #55A532;
+				line-height: 84px;
+			}
+			
+			#header-l {
+				display: inline-block;
+				margin-left: 12%;
+				margin-right: 70%;
+			}
+			
+			#header-r {
+				display: inline-block;
+				margin-right: 5%;
+			}
+			
+			#content {
+				width: 90%;
+				margin: 0 5% 20px 5%;
+				background-color: #55A532;
+				position: absolute;
+			}
+			
+			.content-l {
+				width: 20%;
+				background-color: #55A532;
+				float: left;
+			}
+			
+			#name {
+				height: 100px;
+				text-align: center;
+				padding-bottom: 50px;
+				padding-top: 10%;
+				line-height: 100px;
+			}
+			
+			i {
+				display: inline-block;
+			}
+			
+			.per, .img, .home{
+				font-size: 40px;
+				color: #333333;
+				display: inline-block;
+			}
+			
+			.addimg {
+				font-size: 70px;
+				color: #333333;
+				display: inline-block;
+			}
+			
+			.personal {
+				width: 33%;
+				text-align: center;
+				line-height: 80px;
+				color: #666666;
+				font-size: 25px;
+				margin-left: 33%;
+			}
+			
+			.personal:hover {
+				background-color: white;
+			}
+			
+			.content-r {
+				width: 80%;
+				background-color: white;
+				height: 800px;
+				float: left;
+			}
+			
+			#information {
+				display: none;
+			}
+			
+			#historys {
+				
+			}
+			
+			#course {				
+				display: none;
+			}
+			
+			.content-title {
+				color: #404040;
+				font-size: 25px;
+				margin: 20px 30px ;
+			}
+			
+			hr {
+				margin: 20px 20px;
+				height: 3px;
+				border: none;
+				background-color: #55A532;
+			}
+			
+			#information-list, #change {
+				margin: 30px 40px;
+			}
+			
+			#change {
+				display: none;
+			}
+			
+			.usename {
+				position: relative;
+				margin-left: 20px;
+				top: -10px;
+				color: #333333;
+				font-size: 20px;
+			}
+			
+			input {
+				border: 0;
+				font-size: 18px;
+				text-align: center;
+			}
+			
+			input:focus {
+				outline: none;
+				border-bottom: 2px solid #55A532;
+			}
+			
+			#change span {
+				line-height: 40px;
+			}
+			
+			#change-btn {
+				border: 2px solid #55A532;
+				width: 100px;
+				border-radius: 20px;
+				text-align: center;
+				margin: 30px 20px 20px 60px;
+			}
+			
+			#change-btn:hover {
+				background-color: #55A532;
+			}
+			
+			#historys-list,#course-list {
+				height: 600px;
+				width: 95%;
+				overflow: auto;
+				margin-left: 5%;
+			}
+			
+			#historys-list::-webkit-scrollbar {
+				position: relative;
+			    width: 10px;   
+			    height: 1px;
+				padding-left: 4%;
+			    }
+				
+			#historys-list::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+			        background-color: #999999;
+					opacity: 0.3;
+			    }
+				
+			#historys-list::-webkit-scrollbar-track {/*滚动条里面轨道*/
+			    }
+			
+			#course-list::-webkit-scrollbar {
+				position: relative;
+			    width: 10px;   
+			    height: 1px;
+				padding-left: 4%;
+			    }
+				
+			#course-list::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+			        background-color: #999999;
+					opacity: 0.3;
+			    }
+				
+			
+			.aa {
+				height: 200px;
+				background-color: #0086B3;
+				width: 95%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div id="header-l">
+				<i class="per iconfont icon-gerenzhongxin"></i>
+				<span>个人中心</span>
+			</div>
+			<div id="header-r">
+				<i class="home iconfont icon-tubiao115"></i>
+			</div>
+		</div>
+		<div id="content">
+			<div class="content-l">
+				<div id="name">
+					<i class="img iconfont icon-gerenzhongxin"></i>
+					<span class="usename">张三</span>
+				</div>
+				<div class="personal" onclick="show(information)">个人信息</div>
+				<div class="personal" onclick="show(historys)">播放记录</div>
+				<div class="personal" onclick="show(course)">已购课程</div>
+			</div>
+			<div id="information" class="content-r">
+				<div class="content-title">个人信息</div>
+				<hr>
+				<div id="information-list">
+					<i class="addimg iconfont icon-gerenzhongxin"></i>
+					<span>用户ID：</span>
+					<p>昵称：</p>
+					<p>电话号码：</p>
+					<span>账户余额：</span>
+					<span>充值</span>
+					<div id="change-btn" onclick="changef(false)">修改</div>
+				</div>
+				<div id="change">
+					<i class="addimg iconfont icon-gerenzhongxin"></i>
+					<span>用户ID：</span><br>
+					<span>昵称：&nbsp &nbsp &nbsp &nbsp </span>
+					<input type="" name="" id="" value="" placeholder="昵称"/><br>
+					<span>电话号码：</span>
+					<input type="" name="" id="" value="" placeholder="电话号码"/><br>
+					<span>密码：&nbsp &nbsp &nbsp &nbsp </span>
+					<input type="" name="" id="" value="" placeholder="密码"/><br>
+					<span>确认密码：</span>
+					<input type="" name="" id="" value="" placeholder="确认密码"/>
+					<div id="change-btn" onclick="changef(true)">确认修改</div>
+				</div>
+			</div>
+			<div id="historys" class="content-r">
+				<div class="content-title">播放记录</div>
+				<hr>
+				<div id="historys-list">
+					<div class="aa"></div><br>
+					<div class="aa"></div><br>
+					<div class="aa"></div><br>
+					<div class="aa"></div><br>
+				</div>
+			</div>
+			<div id="course" class="content-r">
+				<div class="content-title">已购课程</div>
+				<hr>
+				<div id="course-list">
+					<div class="aa"></div><br>
+					<div class="aa"></div><br>
+					<div class="aa"></div><br>
+					<div class="aa"></div><br>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+			function show(element) {				
+				var information = document.getElementById("information");
+				var history = document.getElementById("historys");
+				var course = document.getElementById("course");
+				information.style.display = "none";
+				history.style.display = "none";
+				course.style.display = "none";
+				element.style.display = "block";
+			}
+			function changef(element) {
+				var change = document.getElementById("change");
+				var informationlist = document.getElementById("information-list");
+				if (element == false){
+					change.style.display = "block";
+					informationlist.style.display = "none";
+				}else{	
+					change.style.display = "none";
+					informationlist.style.display = "block";
+				}
+			}
+	</script>
+</html>
