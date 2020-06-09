@@ -1,0 +1,141 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+}
+html{
+	font-size: 1rem;
+}
+body{
+	background-color: #d9f1ffa8;
+	/* font-size: 16px; */
+}
+#continer{
+	width: 9.375rem;
+	margin: 0.104166rem auto;
+	display: flex;
+	justify-content: space-between;
+}
+#wrap_l{
+	width: 6.208333rem;
+	/* float: left; */
+	/* height: 5rem; */
+	/* margin-left: 0.520833rem; */
+	
+}
+#wrap_l #video_data{
+	height: 0.7375rem;
+	/* background: seagreen; */
+}
+#video_data .video_name{
+	font-size: 0.199rem;
+	letter-spacing: 0.03rem;
+	font-weight: 500;
+	color: #252424;
+}
+ #video_data .video_date{
+	color: #3c3c3c;
+	font-size: 0.130208rem;
+	margin-top: 0.078125rem;
+ }
+ #video_play{
+	 width: 6.208333rem;
+	 /* height: 4.6875rem; */
+	 /* background: pink; */
+ }
+ #video_play .video{
+	 width: 6.208333rem;
+ }
+#wrap_r{
+	width: 3rem;
+	background: #faf4f4;
+}
+#wrap_r #author_data{
+	width: 3rem;
+	height: 0.7375rem;
+	background: #f6e9e7;
+	text-align: left;
+	/* padding-top: 0.3125rem; */
+	font-size: 0.199rem;
+	letter-spacing: 0.03rem;
+	font-weight: 500;
+	box-sizing: border-box;
+	color: #252424;
+}
+.author_message{
+	height: 0.4rem;
+	font-size: 0.130208rem;
+}
+.author_message img{
+	height: 0.4rem;
+	width: 0.4rem;
+	/* float: left; */
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.author_message span{
+	vertical-align: middle;
+}
+.video_p{
+	height: 0.260416rem;
+	/* background: wheat; */
+	margin-top: 0.052083rem;
+	line-height: 0.260416rem;
+}
+.video_p .text_all{
+	font-size: 0.15625rem;
+	float: left;
+	color: #252424;
+}
+.video_p .p_amount{
+	float: right;
+	color: #3C3C3C;
+	font-size: 0.1rem;
+}
+#wrap_r .video_list{
+	width: 3rem;
+	height: 3.53rem;
+	overflow: auto;
+}
+.video_list li{   /*注意不能写.video_list>ul li*/
+	height: 0.4rem;
+}
+.video_list li:first-of-type{
+	margin-top: 0;
+}
+.video_list li:hover{
+	background: white;
+}
+.video_list li a{
+	display: block;
+	font-size: 0.130208rem;
+	line-height: 0.4rem;
+}
+.video_list li a>.s1{
+	margin-right: 0.130208rem;
+}
+#video_more{
+	height:0.416666rem;
+    width: 9.375rem;	
+	margin: 0.104166rem auto;	
+	display: flex;	
+	justify-content: flex-start;
+	/* border: 0 0 0 0; */
+	box-shadow: 0.005208rem 0.005208rem 0.010416rem 0.005208rem #00000036;
+	/* background: #000000; */
+}
+#video_more>div{
+	width: 0.598958rem;
+	height: 0.416666rem;
+	/* background: white; */
+	margin-right: 0.260416rem;
+	font-size: 0.15625rem;
+	line-height: 0.416666rem;
+}
+#video_more>div i{
+	margin-right: 0.052083rem;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	width: 8px;
+}
