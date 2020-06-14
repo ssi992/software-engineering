@@ -1,0 +1,37 @@
+{
+  "id": "1867832",
+  "name": "2",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "258610",
+      "name": "主页",
+      "font_class": "tubiao115",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "887903",
+      "name": "个人中心",
+      "font_class": "gerenzhongxin",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "1089289",
+      "name": "返回",
+      "font_class": "buoumaotubiao09",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "2604479",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    }
+  ]
+}
