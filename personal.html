@@ -82,16 +82,15 @@
 			.content-r {
 				width: 80%;
 				background-color: white;
-				height: 800px;
+				height: 700px;
 				float: left;
 			}
 			
 			#information {
-				display: none;
 			}
 			
 			#historys {
-				
+				display: none;
 			}
 			
 			#course {				
@@ -172,9 +171,6 @@
 			        background-color: #999999;
 					opacity: 0.3;
 			    }
-				
-			#historys-list::-webkit-scrollbar-track {/*滚动条里面轨道*/
-			    }
 			
 			#course-list::-webkit-scrollbar {
 				position: relative;
@@ -187,12 +183,63 @@
 			        background-color: #999999;
 					opacity: 0.3;
 			    }
-				
 			
-			.aa {
-				height: 200px;
-				background-color: #0086B3;
+			.pic {
+				width: 100%;
+				height: 130px;
+				margin: 10px 10px 10px 10px;
+			}
+			
+			.lists {
+				height: 150px;
 				width: 95%;
+				position: relative;
+				margin-bottom: 10px;
+			}
+			
+			.lists-l {
+				float: left;
+				width: 30%;
+			}
+			
+			.lists-r {
+				float: right;
+				width: 65%;
+				position: relative;
+			}
+			
+			.b {
+				line-height: 40px;
+				font-size: 13px;
+				color: #333333;
+			}
+			
+			.a {
+				line-height: 40px;
+				font-size: 20px;
+				margin-top: 20px;
+			}
+			
+			.c-l {
+				margin-top: 20px;
+				width: 70%;
+				background-color: #000000;
+				height: 3px;
+				float: left;
+			}
+			
+			.c-r {
+				margin-top: 20px;
+				width: 10%;
+				background-color: #999999;
+				height: 3px;
+				float: left;
+			}
+			
+			.time {
+				position: relative;
+				top: 10px;
+				font-size: 12px;
 			}
 		</style>
 	</head>
@@ -246,20 +293,29 @@
 				<div class="content-title">播放记录</div>
 				<hr>
 				<div id="historys-list">
-					<div class="aa"></div><br>
-					<div class="aa"></div><br>
-					<div class="aa"></div><br>
-					<div class="aa"></div><br>
+					<!-- <div class="lists">
+						<div class="lists-l"><img src="1.jpg" class="pic"></div>
+						<div class="lists-r">
+							<div class="a">xxx老师专题</div>
+							<div class="b">2020/6/6 &nbsp &nbsp 16:22</div>
+							<div class="c-l"></div>
+							<div class="c-r"></div>
+							<span class="time">11:01/13:01</span>
+						</div>
+					</div> -->
 				</div>
 			</div>
 			<div id="course" class="content-r">
 				<div class="content-title">已购课程</div>
 				<hr>
 				<div id="course-list">
-					<div class="aa"></div><br>
-					<div class="aa"></div><br>
-					<div class="aa"></div><br>
-					<div class="aa"></div><br>
+					<!-- <div class="lists">
+						<div class="lists-l"><img src="1.jpg" class="pic"></div>
+						<div class="lists-r">
+							<div class="a">xxx老师专题</div>
+							<div class="b">2020/6/6 &nbsp &nbsp 16:22</div>
+						</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -285,5 +341,67 @@
 					informationlist.style.display = "block";
 				}
 			}
+			
+			function jump(num){
+				window.open('2.html?num='+num);
+			}
+	</script>
+	<script src="jquery.3.4.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//登录
+			var id;
+			$.ajax({
+				url:'http://47.101.128.196:8221/videocsplatform/user/login?password=123456&username=hlq',
+				type:"POST",
+				async:false,
+				success:(data,status)=>{
+					// for(var i=0;i<data.data.length;i++)
+					id = data.data;
+				}
+			})
+			
+			//已购买课程
+			$.ajax({
+				url:'http://47.101.128.196:8221/videocsplatform/course/bought',
+				type:"GET",
+				headers:{"Authorization":id},
+				async:false,
+				success:(data,status)=>{
+					for(var i=0;i<data.data.length;i++)
+					{
+						console.log(data);
+						var x = data.data[i].courseName;
+						$.ajax({
+							url:'http://47.101.128.196:8221/videocsplatform/course/'+data.data[i].courseId,
+							type:"GET",
+							headers:{"Authorization":id},
+							success:(s,status)=>{
+								//for(var j=0;i<s.data.length;j++)
+								name = s.data.courseName;
+							}
+						})
+						$("#course-list").append(" <div onclick=\"jump("+data.data[i].courseId+")\" class=\"lists\"><div class=\"lists-l\"><img src=\"1.jpg\" class=\"pic\"></div><div class=\"lists-r\"><div class=\"a\">" + name + "</div><div class=\"b\">2020/6/6 &nbsp &nbsp 16:22</div></div></div>");
+					}	
+				}
+			})
+			
+			//播放记录
+			$.ajax({
+				url:'http://47.101.128.196:8221/videocsplatform/video/history',
+				type:"GET",
+				headers:{"Authorization":id},
+				async:false,
+				success:(data,status)=>{
+					for(var i=0;i<data.data.length;i++)
+					{
+						var x = data.data[i].v_title;
+						var time1 = data.data[i].exit_time.split("T")[0];
+						var time2 = data.data[i].exit_time.split("T")[1].split(".")[0];
+						$("#historys-list").append("<div onclick=\"jump("+data.data[i].courseId+")\" class=\"lists\"><div class=\"lists-l\"><img src=\"1.jpg\" class=\"pic\"></div><div class=\"lists-r\"><div class=\"a\">" + name + "</div><div class=\"b\">" + time1 + " &nbsp &nbsp " + time2 + "</div><div class=\"c-l\"></div><div class=\"c-r\"></div><span class=\"time\">11:01/13:01</span></div></div>");
+					}	
+				}
+			})
+		})
 	</script>
 </html>
