@@ -1,0 +1,184 @@
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul li{
+				list-style-type: none;
+			}
+			input{
+				display: block;
+			}
+			.overall{/* 整体框架 */
+				min-width: 1200px;
+				width: 100%;
+				min-height: 781px;
+				height: 100%;
+				background-color: #d9f1ffa8;
+			}
+			.header{/* 头部导航栏 */
+				width: 100%;
+				height: 74px;
+				position: relative;
+			}
+			.header span{
+				display: inline-block;
+				height: 100%;
+				line-height: 74px;
+				position: absolute;
+				left: 7.5%;
+			}
+			/* 右上角选项卡 */
+			#landchoose{
+				width: 90px;
+				z-index: 99;
+				position: absolute;
+				top: 60px;
+				right: 8%;
+				display:none;
+				background: #000000;
+			}
+			#landchoose li{
+				margin: 0 auto;
+				width: 80px;
+				text-align: center;
+				line-height: 30px;
+				background: #404040;
+				color: #C7EDCC;
+				border-bottom:  #CCCCCC solid 1px;
+				cursor: pointer;
+			}
+			
+			
+			
+			.main{/* 内容框架 */
+				width: 90%;
+				margin: 0 auto;
+				background-color: aliceblue;
+				height: 650px;
+				overflow: hidden;
+			}
+			/* 内容导航栏 */
+			.choose{
+				width: 100%;
+				height: 60px;
+				margin: 0 auto;
+				border-bottom: 1px solid #afafaf80;
+				position: relative;
+			}
+			.choose input{
+				display: none;
+			}
+			.choose label{
+				width: 30%;
+				float: left;
+				text-align: center;
+				padding-top: 10px;
+				line-height:48px ;
+				font-size: 24px;
+				color: #7c7c7c;
+				cursor: pointer;
+			}
+			#C1{
+				color: #000000;
+				font-size: 26px;
+				font-weight: bold;
+				border-bottom: #00FFFF solid 5px;
+			}
+			#C4{
+				position: absolute;
+				right: 5%px;
+				width: auto;
+			}
+			/* 点击切换视频图列板块 */
+			#HC1:checked ~ul{
+				margin-left: 0px;
+			}
+			#HC2:checked ~ul{
+				margin-left:-100%;
+			}
+			#HC3:checked ~ul{
+				margin-left: -200%;
+			}
+			#HC4:checked ~ul{
+				margin-left: -300%;
+			}
+			/* 点击切换导航栏样式 */
+			#HC1:checked ~#C1,#HC2:checked ~#C2,#HC3:checked ~#C3,#HC4:checked ~#C4{
+				color: #000000;
+				font-size: 26px;
+				font-weight: bold;
+				border-bottom: #00FFFF solid 5px;
+			}
+			#HC2:checked ~#C1,#HC3:checked ~#C1,#HC4:checked ~#C1{
+				font-size: 24px;
+				color: #7c7c7c;
+				border-bottom:none;
+				font-weight: inherit;
+			}
+			/* 视频图列框 */
+			.content{
+				width: 400%;
+				height:500px ;
+				margin-top: 10px;
+				display:flex;
+				justify-content: space-between;
+			}
+			/* 视频图列框板块*/
+			.content li{
+				width: 25%;
+				min-height: 537px;
+				display:inline-block;
+				margin-top: 50px;
+				overflow-y: auto;
+			}
+			.sousuo{
+				width: 350px;
+				margin: 10px auto;
+				position: relative;
+			}
+			.sousuo input{
+				width: 350px;
+				line-height: 25px;
+				display: block;
+				color: darkgray;
+				border: #CCCCCC solid 1px;
+				border-radius: 14px;
+				padding-left: 15px;
+			}
+			
+			#sousuo{
+				position: absolute;
+				right: -10px;
+				top: -7px;
+				color: #A9A9A9;
+			}
+			
+			
+			.video{
+				display: block;
+				width: 400px;
+				height:260px;
+				background: #ffffff;
+				margin-left: 80px;
+				margin-bottom: 20px;
+				position:relative;
+				float: left;
+				cursor:pointer;
+			}
+			.videoP{
+				width:400px;
+				height:50px;
+				lineHeight:25px;
+				background:#E7E1CD;
+				position:absolute;
+				bottom:0px;
+			}
+		.videoSpan{
+			margin-right: 20px;
+			position:absolute;
+			bottom:15px;
+			right: 0;
+		}
+			
+			
+			

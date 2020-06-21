@@ -1,0 +1,76 @@
+#mask{/* 整体蒙层*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 1200px;
+	width: 100%;
+	min-height: 760px;
+	height: 100%;
+	background-color: #d9f1ffa8;
+	display: none;
+}
+/* 登录、注册内容框 */
+#loginBox,#registerBox{
+	width: 700px;
+	height: 350px;
+	background: #C7EDCC;
+	margin: 12% auto;
+	position: relative;
+}
+#loginBox{
+	display: block;
+}
+#registerBox{
+	display: none;
+}
+/* Login or Register 标题*/
+.title{
+	text-align: center;
+	font-size: 40px;
+	line-height: 100px;
+	margin-bottom: 10px;
+}
+/* 输入框样式 */
+.userInput{
+	margin-left: 20%;
+	margin-top: 10px;
+	position: relative;
+}
+.userInput span{
+	font-size: 20px;
+	position: absolute;
+	top: 0px;
+}
+.userInput input{
+	margin-left: 100px;
+	height: 25px;
+	width: 340px;
+	outline: none;
+	border: none;
+	background: none;
+	border-bottom: #7C7C7C solid 1px;
+}
+/* 确认按钮 */
+.enter{
+	width: 70px;
+	height: 35px;
+	position: absolute;
+	bottom: 50px;
+	left:45%;
+}
+/* 取消按键鼠标悬浮效果 */
+#l-esc:hover{
+	color: #000000;
+}
+
+/* Login页面的注册入口 */
+#register{
+	position: absolute;
+	top: 200px;
+	right: 140px;
+	cursor: pointer;
+}
+#register:hover{
+	color: crimson;
+	text-decoration: underline;
+}

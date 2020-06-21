@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>精品课程</title>
+		<link href="../image/iconfont.css" type="text/css" rel="stylesheet" />
+		<link href="../CSS/home.css" type="text/css"  rel="stylesheet"/>
+		<link href="../css/Register&Login.css" type="text/css"  rel="stylesheet"/>
+	</head>
+	<body>
+		<!-- Home -->
+		<!-- 整体大框架，占据整个页面 -->
+		<div class="overall">
+			<!-- 抬头 -->
+			<div class="header">
+				<div class="iconfont icon-shouye"></div>
+				<span>xxx精品课</span>
+				<div class="iconfont icon-gerenzhongxin" id="userLand1"></div>
+				<div class="iconfont icon-gerenzhongxin" id="userLand2"></div>
+				<ul id="landchoose">
+					<li id="landchoose1">个人中心</li>
+					<li id="landchoose2">退出登录</li>
+				</ul>
+			</div>
+			<!-- 主要内容界面 -->
+			<div class="main">
+				<div class="choose">
+					<!-- 导航栏 -->
+					<input type="radio" name="homeChoose" id="HC1" />
+					<input type="radio" name="homeChoose" id="HC2" />
+					<input type="radio" name="homeChoose" id="HC3" />
+					<input type="radio" name="homeChoose" id="HC4" />
+					<label for="HC1" id="C1">精品推荐</label>
+					<label for="HC2" id="C2">免费专区</label>
+					<label for="HC3" id="C3">付费专区</label>
+					<label for="HC4" id="C4" class="iconfont icon-sousuosearch82"></label>
+					<!-- 视频图列界面 -->
+					<ul class="content">
+						<!-- 精品推荐 -->
+						<li>
+							<div id="content1"></div>
+						</li>
+						<!-- 免费专区 -->
+						<li>
+							<div id="content2"></div>
+						</li>
+						<!-- 付费专区 -->
+						<li>
+							<div id="content3"></div>
+						</li>
+						<!-- 搜索 -->
+						<li>
+							<div class="sousuo">
+								<input type="text" name="sousuo" value="搜索" />
+								<div class="iconfont icon-sousuosearch82" id="sousuo"></div>
+							</div>
+							<div id="content4"></div>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		<!-- 登录、注册 -->
+		<div id="mask">
+			<!-- login -->
+			<div id="loginBox">
+				<p class="title">Login</p>
+				<div class="userInput">
+					<span>用户名：</span>
+					<input id="l-username" class="userInput" type="text" name="username" />
+				</div>
+				<div class="userInput">
+					<span>密&nbsp;&nbsp;&nbsp;码：</span>
+					<input id="l-password" class="userInput" type="password" name="password" />
+				</div>
+				<div id="register">注册</div>
+				<button class="enter" id="l-enter">登录</button>
+				<!-- 输入信息有误提示框 -->
+				
+				<button class="iconfont icon-fanhuidingbu" id="l-esc"></button>
+			</div>
+			
+			<!-- register -->
+			<div id="registerBox">
+				<p class="title">Rrgister</p>
+				<div class="userInput">
+					<span>用&nbsp;户&nbsp;名&nbsp;：</span>
+					<input id="r-username" class="userInput" type="text" name="username" />
+				</div>
+				<div class="userInput">
+					<span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;：</span>
+					<input id="r-password1" class="userInput" type="password" name="password1" />
+				</div>
+				<div class="userInput">
+					<span>确认密码：</span>
+					<input id="r-password2" class="userInput" type="password" name="password2" />
+				</div>
+				<button class="enter" id="r-enter">注册</button>
+				<button class="iconfont icon-fanhuidingbu" id="r-esc"></button>
+			</div>
+		</div>
+		
+	</body>
+	<!-- <script type="text/javascript" src="../js/jquery-3.4.1.min%20(1).js"></script> -->
+	<script type="text/javascript" src="../JS/jquery.3.4.1.js"></script>
+	<!-- <script type="text/javascript" src="../js/jump+land+regist.js"></script> -->
+	<script type="text/javascript" src="../JS/video.js"></script>
+	
+</html>
